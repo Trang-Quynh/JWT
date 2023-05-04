@@ -12,69 +12,7 @@
     <link rel="stylesheet" href="./assets/css/loopple/loopple.css">
 </head>
 
-<body id="body" onload="showHome()">
-<!--<nav class="navbar navbar-expand-lg navbar-light bg-white py-3">-->
-<!--    <div class="container">-->
-<!--        <a class="navbar-brand w-8" href="#" data-config-id="brand">-->
-<!--            <img src="https://www.loopple.com/img/loopple-logo.png" width="80" alt="">-->
-<!--        </a>-->
-
-<!--        <button class="navbar-toggler shadow-none ms-2" type="button" data-bs-toggle="collapse"-->
-<!--                data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false"-->
-<!--                aria-label="Toggle navigation">-->
-<!--                <span class="navbar-toggler-icon mt-2">-->
-<!--                    <span class="navbar-toggler-bar bar1"></span>-->
-<!--                    <span class="navbar-toggler-bar bar2"></span>-->
-<!--                    <span class="navbar-toggler-bar bar3"></span>-->
-<!--                </span>-->
-<!--        </button>-->
-<!--        <div class="collapse navbar-collapse w-100 pt-3 pb-2 py-lg-0" id="navigation">-->
-<!--            <ul class="navbar-nav navbar-nav-hover ms-auto">-->
-<!--                <li class="nav-item mx-2">-->
-<!--                    <a href="javascript:void(0);" class="nav-link ps-2 cursor-pointer">-->
-<!--                        Shop Flowers-->
-<!--                    </a>-->
-<!--                </li>-->
-<!--                <li class="nav-item mx-2">-->
-<!--                    <a href="javascript:void(0);" class="nav-link ps-2 cursor-pointer">-->
-<!--                        Shop Plants-->
-<!--                    </a>-->
-<!--                </li>-->
-<!--                <li class="nav-item mx-2">-->
-<!--                    <a href="javascript:void(0);" class="nav-link ps-2 cursor-pointer">-->
-<!--                        Wedding-->
-<!--                    </a>-->
-<!--                </li>-->
-<!--                <li class="nav-item mx-2">-->
-<!--                    <a href="javascript:void(0);" class="nav-link ps-2 cursor-pointer">-->
-<!--                        Delivery-->
-<!--                    </a>-->
-<!--                </li>-->
-<!--                <li class="nav-item mx-2">-->
-<!--                    <a href="javascript:void(0);" class="nav-link ps-2 cursor-pointer">-->
-<!--                        Contact Us-->
-<!--                    </a>-->
-<!--                </li>-->
-<!--            </ul>-->
-<!--            <ul class="navbar-nav ms-auto">-->
-<!--                <li class="nav-item mx-2">-->
-<!--                    <input style="display:inline-block;" type="search" id="search" name="search" class="form-control"-->
-<!--                           placeholder="商品名で検索">-->
-<!--                </li>-->
-<!--                <li class="nav-item ms-2">-->
-<!--                    <button href="javascript:void(0);" class="btn bg-gradient-dark mb-0" onclick="showFormSignUp()">-->
-<!--                        signup-->
-<!--                    </button>-->
-<!--                </li>-->
-<!--                <li class="nav-item ms-2">-->
-<!--                    <button href="javascript:void(0);" class="btn bg-gradient-dark mb-0" onclick="showFormLogin()">-->
-<!--                        login-->
-<!--                    </button>-->
-<!--                </li>-->
-<!--            </ul>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</nav>-->
+<body id="body" >
 <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
     <div class="container">
         <a class="navbar-brand w-8" href="#" data-config-id="brand">
@@ -93,13 +31,8 @@
         <div class="collapse navbar-collapse w-100 pt-3 pb-2 py-lg-0" id="navigation">
             <ul class="navbar-nav navbar-nav-hover ms-auto">
                 <li class="nav-item mx-2">
-                    <a href="javascript:void(0);" class="nav-link ps-2 cursor-pointer">
-                        Shop Flowers
-                    </a>
-                </li>
-                <li class="nav-item mx-2">
-                    <a href="javascript:void(0);" class="nav-link ps-2 cursor-pointer">
-                        Shop Plants
+                    <a href="javascript:void(0);" class="nav-link ps-2 cursor-pointer" onclick="showFormAdd()">
+                        Add product
                     </a>
                 </li>
                 <li class="nav-item mx-2">
@@ -133,342 +66,32 @@
                         login
                     </button>
                 </li>
+
+                <li class="nav-item ms-2">
+                    <button href="javascript:void(0);" class="btn bg-gradient-dark mb-0" onclick="logout()">
+                        logout
+                    </button>
+                </li>
             </ul>
         </div>
     </div>
 </nav>
 <div >
-    <header class="">
-        <div class="page-header min-vh-75">
-            <span class="mask bg-gradient-info opacity-4"></span>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 my-auto text-white text-xl-left">
-                        <h1 class="text-dark display-2 
- font-weight-bolder mb-4">Find</h1>
-                        <p class="text-dark mb-0">Get 50% Off for your first purchase</p>
-                        <p class="text-dark font-weight-bolder text-lg">FLOWER50</p>
-                        <button type="submit" class="btn bg-gradient-primary mt-3 mb-0">Shop now</button>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="positio-absolute rounded-circle end-4 top-0 mt-n4 shadow-lg d-xl-block d-none"
-                             style="background-image: url('https://images.unsplash.com/photo-1617176756162-447320192d98?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1180&amp;q=80');width: 600px;height: 600px; background-position: center;background-size: cover;">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-    <section class="pt-6 pb-4">
+
+    <section class="pt-6 pb-4" >
         <div class="container">
             <div class="row mb-4">
-                <div class="col-12 text-center">
-                    <h3 class="mb-5" spellcheck="false">Deals of the Day</h3>
+                <div id="product" class="row" onload="showHome()">
                 </div>
-                <div id="product1" class="row">
-                    <div class="col-lg-3 mb-lg-0 mb-4">
-                        <div class="card">
-                            <div class="card-header p-0 mx-3 mt-3 position-relative z-index-1">
-                                <a href="javascript:;" class="d-block">
-                                    <img src="https://images.unsplash.com/photo-1548460464-2a68877c7a5f?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cm9zZXxlbnwwfDJ8MHx8&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60"
-                                         class="img-fluid border-radius-lg shadow">
-                                </a>
-                            </div>
-
-                            <div class="card-body pt-3">
-                                <div class="d-flex align-items-center">
-                                    <div>
-                                        <span class="text-sm">Flower</span>
-                                        <h4 class="card-description font-weight-bolder text-dark mb-4">
-                                            Rose
-                                        </h4>
-                                    </div>
-                                    <div class="ms-auto">
-                                        <a href="javascript:;" class="btn btn-link text-dark p-0">
-                                            <i class="fa fa-star text-lg" aria-hidden="true"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="d-flex align-items-center mb-3">
-                                    <h5 class="mb-0 font-weight-bolder">$25.40</h5>
-                                </div>
-                                <a href="javascript:;" class="btn btn-outline-dark mb-0">Add to cart</a>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 mb-lg-0 mb-4">
-                        <div class="card">
-                            <div class="card-header p-0 mx-3 mt-3 position-relative z-index-1">
-                                <a href="javascript:;" class="d-block">
-                                    <img src="https://images.unsplash.com/photo-1528475563668-e15742001b92?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=3280&amp;q=80"
-                                         class="img-fluid border-radius-lg shadow">
-                                </a>
-                            </div>
-
-                            <div class="card-body pt-3">
-                                <div class="d-flex align-items-center">
-                                    <div>
-                                        <span class="text-sm">Flower</span>
-                                        <h4 class="card-description font-weight-bolder text-dark mb-4">
-                                            Cactus</h4>
-                                    </div>
-                                    <div class="ms-auto">
-                                        <a href="javascript:;" class="btn btn-link text-dark p-0">
-                                            <i class="fa fa-star text-lg" aria-hidden="true"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="d-flex align-items-center mb-3">
-                                    <h5 class="mb-0 font-weight-bolder">$19.00</h5>
-                                </div>
-                                <a href="javascript:;" class="btn btn-outline-dark mb-0">Add to cart</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 mb-lg-0 mb-4">
-                        <div class="card">
-                            <div class="card-header p-0 mx-3 mt-3 position-relative z-index-1">
-                                <a href="javascript:;" class="d-block">
-                                    <img src="https://images.unsplash.com/photo-1589292514550-ffa367e28682?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzN8fHR1bGlwfGVufDB8MnwwfHw%3D&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60"
-                                         class="img-fluid border-radius-lg shadow">
-                                </a>
-                            </div>
-                            <div class="card-body pt-3">
-                                <div class="d-flex align-items-center">
-                                    <div>
-                                        <span class="text-sm">Flower</span>
-                                        <h4 class="card-description font-weight-bolder text-dark mb-4">
-                                            Tulip</h4>
-                                    </div>
-                                    <div class="ms-auto">
-                                        <a href="javascript:;" class="btn btn-link text-dark p-0">
-                                            <i class="fa fa-star text-lg" aria-hidden="true"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="d-flex align-items-center mb-3">
-                                    <h5 class="mb-0 font-weight-bolder">$9.90</h5>
-
-                                </div>
-                                <a href="javascript:;" class="btn btn-outline-dark mb-0">Add to cart</a>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 mb-lg-0 mb-4">
-                        <div class="card">
-                            <div class="card-header p-0 mx-3 mt-3 position-relative z-index-1">
-                                <a href="javascript:;" class="d-block">
-                                    <img src="https://images.unsplash.com/photo-1502977249166-824b3a8a4d6d?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1180&amp;q=80"
-                                         class="img-fluid border-radius-lg shadow">
-                                </a>
-                            </div>
-
-                            <div class="card-body pt-3">
-                                <div class="d-flex align-items-center">
-                                    <div>
-                                        <span class="text-sm">Flower</span>
-                                        <h4 class="card-description font-weight-bolder text-dark mb-4">
-                                            Lily</h4>
-                                    </div>
-                                    <div class="ms-auto">
-                                        <a href="javascript:;" class="btn btn-link text-dark p-0">
-                                            <i class="fa fa-star text-lg" aria-hidden="true"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="d-flex align-items-center mb-3">
-                                    <h5 class="mb-0 font-weight-bolder">$39.20</h5>
-
-                                </div>
-                                <a href="javascript:;" class="btn btn-outline-dark mb-0">Add to cart</a>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-<!--                <div class="col-12 mt-5 text-center">-->
-<!--                    <a href="javascript" class="btn bg-gradient-dark">View All</a>-->
-<!--                </div>-->
             </div>
         </div>
     </section>
 </div>
 
 
-<section class="py-5">
-    <div class="container">
-        <div class="row">
-            <div class="col-12 mb-4 text-center">
-                <h3 spellcheck="false">Shop by Category</h3>
-            </div>
-            <div class="col-lg-3 col-sm-6 mb-4">
-                <div class="card h-100 mb-4 min-height-250 card-background align-items-start">
-                    <div class="full-background"
-                         style="background-image: url('https://images.unsplash.com/photo-1495908333425-29a1e0918c5f?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1180&amp;q=80')"></div>
-                    <div class="card-body w-100 z-index-3 text-center d-flex flex-column align-items-center justify-content-center">
-                        <h4 class="text-white font-weight-bolder">Garden</h4>
-                        <a href="javascript:;" class="btn btn-outline-white mb-0">View all</a>
-                    </div>
-                    <span class="mask bg-gradient-dark border-radius-xl z-index-2 opacity-7"></span>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6 mb-4">
-                <div class="card h-100 mb-4 min-height-250 card-background align-items-start">
-                    <div class="full-background"
-                         style="background-image: url('https://images.unsplash.com/photo-1499916078039-922301b0eb9b?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Zmxvd2VycyUyMGhvdXNlfGVufDB8MnwwfHw%3D&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60')"></div>
-                    <div class="card-body w-100 z-index-3 text-center d-flex flex-column align-items-center justify-content-center">
-                        <h4 class="text-white font-weight-bolder">House</h4>
-                        <a href="javascript:;" class="btn btn-outline-white mb-0">View all</a>
-                    </div>
-                    <span class="mask bg-gradient-dark border-radius-xl z-index-2 opacity-7"></span>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6 mb-4">
-                <div class="card h-100 mb-4 min-height-250 card-background align-items-start">
-                    <div class="full-background"
-                         style="background-image: url('https://images.unsplash.com/photo-1625552186152-668cd2f0b707?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1480&amp;q=80')"></div>
-                    <div class="card-body w-100 z-index-3 text-center d-flex flex-column align-items-center justify-content-center">
-                        <h4 class="text-white font-weight-bolder">Party</h4>
-                        <a href="javascript:;" class="btn btn-outline-white mb-0">View all</a>
-                    </div>
-                    <span class="mask bg-gradient-dark border-radius-xl z-index-2 opacity-7"></span>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6 mb-4">
-                <div class="card h-100 mb-4 min-height-250 card-background align-items-start">
-                    <div class="full-background"
-                         style="background-image: url('https://images.unsplash.com/photo-1607083206968-13611e3d76db?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2115&amp;q=80')"></div>
-                    <div class="card-body w-100 z-index-3 text-center d-flex flex-column align-items-center justify-content-center">
-                        <h4 class="text-white font-weight-bolder">50% OFF</h4>
-                        <a href="javascript:;" class="btn btn-outline-white mb-0">View all</a>
-                    </div>
-                    <span class="mask bg-gradient-dark border-radius-xl z-index-2 opacity-7"></span>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<section class="pb-3">
-    <div class="row">
-        <div class="col-6 text-center mx-auto mt-5 mb-0">
-            <h2>Read our Articles</h2>
-            <p>See what people from all around the world are saying about our website.
-            </p>
-        </div>
-    </div>
-</section>
-<section class="pb-6 bg-gray-100">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-4 mb-lg-0 mb-4">
-                <div class="card">
-                    <div class="card-header p-0 mx-3 mt-3 position-relative z-index-1">
-                        <a href="javascript:;" class="d-block">
-                            <img src="https://images.unsplash.com/photo-1488928741225-2aaf732c96cc?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1770&amp;q=80"
-                                 class="img-fluid border-radius-lg">
-                        </a>
-                    </div>
 
-                    <div class="card-body pt-3">
-                        <span class="text-gradient text-warning text-uppercase text-xs font-weight-bold my-2">Flowers</span>
-                        <a href="javascript:;" class="card-title h5 d-block text-darker">Why we love tulips</a>
-                        <p class="card-description mb-4">
-                            Use border utilities to quickly style the border and border-radius of an element. Great for
-                            images, buttons.
-                        </p>
-                        <div class="author align-items-center">
-                            <img src="https://demos.creative-tim.com/soft-ui-design-system-pro/assets/img/team-2.jpg"
-                                 alt="..." class="avatar shadow">
-                            <div class="name ps-3">
-                                <span>Mathew Glock</span>
-                                <div class="stats">
-                                    <small>Posted on 28 February</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 mb-lg-0 mb-4">
-                <div class="card">
-                    <div class="card-header p-0 mx-3 mt-3 position-relative z-index-1">
-                        <a href="javascript:;" class="d-block">
-                            <img src="https://images.unsplash.com/photo-1460533893735-45cea2212645?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1856&amp;q=80"
-                                 class="img-fluid border-radius-lg">
-                        </a>
-                    </div>
 
-                    <div class="card-body pt-3">
-                        <span class="text-gradient text-info text-uppercase text-xs font-weight-bold my-2">decor</span>
-                        <a href="javascript:;" class="text-darker card-title h5 d-block">Redecorate your house with
-                            green plants</a>
-                        <p class="card-description mb-4">
-                            Use border utilities to quickly style the border and border-radius of an element. Great for
-                            images, buttons.
-                        </p>
-                        <div class="author align-items-center">
-                            <img src="https://demos.creative-tim.com/soft-ui-design-system-pro/assets/img/ivana-square.jpg"
-                                 alt="..." class="avatar shadow">
-                            <div class="name ps-3">
-                                <span>Chriss Smahos</span>
-                                <div class="stats">
-                                    <small>Posted 2 min ago</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 mb-lg-0 mb-4">
-                <div class="card">
-                    <div class="card-header p-0 mx-3 mt-3 position-relative z-index-1">
-                        <a href="javascript:;" class="d-block">
-                            <img src="https://images.unsplash.com/photo-1509586069852-0674f4eb7826?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1770&amp;q=80"
-                                 class="img-fluid border-radius-lg">
-                        </a>
-                    </div>
 
-                    <div class="card-body pt-3">
-                        <span class="text-gradient text-warning text-uppercase text-xs font-weight-bold my-2">Hub</span>
-                        <a href="javascript:;" class="text-darker card-title h5 d-block">Flowers for work
-                            environment</a>
-                        <p class="card-description mb-4">
-                            Use border utilities to quickly style the border and border-radius of an element. Great for
-                            images, buttons.
-                        </p>
-                        <div class="author align-items-center">
-                            <img src="https://demos.creative-tim.com/soft-ui-design-system-pro/assets/img/marie.jpg"
-                                 alt="..." class="avatar shadow">
-                            <div class="name ps-3">
-                                <span>Elijah Miller</span>
-                                <div class="stats">
-                                    <small>Posted now</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<section class="mt-6 py-5 bg-gradient-dark position-relative"
-         style="background-image:url(https://images.unsplash.com/photo-1516528387618-afa90b13e000?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1770&amp;q=80); background-size: cover; background-position: center center;">
-    <span class="mask bg-gradient-dark opacity-8"></span>
-    <div class="container position-relative z-index-2">
-        <div class="row">
-            <div class="col-md-7 mx-auto text-center">
-                <h3 class="text-white mb-3" spellcheck="false">
-                    About Our Shop</h3>
-                <p class="text-white">It is a long established fact that a reader will be distracted by the readable
-                    content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a
-                    more-or-less normal distribution of letters, as opposed to</p>
-            </div>
-        </div>
-    </div>
-</section>
 <footer class="footer py-5">
     <div class="container">
         <div class="row">
@@ -620,6 +243,9 @@
     </div>
 </footer>
 
+
+
+
 <script src="https://loopple.s3.eu-west-3.amazonaws.com/soft-ui-design-system/js/core/bootstrap.min.js"
         type="text/javascript"></script>
 <!--    <script src="https://demos.creative-tim.com/soft-ui-design-system/assets/js/soft-design-system.min.js?v=1.0.5" type="text/javascript"></script>-->
@@ -631,6 +257,31 @@
         crossorigin="anonymous" referrerpolicy="no-referrer">
 </script>
 <script src="index.js"></script>
+
+<!--uploadFile-->
+<script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+<script>
+    // Initialize Firebase
+    const firebaseConfig = {
+        apiKey: "AIzaSyCJe0l2QrmIhsjsNI_hn-aKNF7oY0_ZnxE",
+        authDomain: "crud-8adf5.firebaseapp.com",
+        projectId: "crud-8adf5",
+        storageBucket: "crud-8adf5.appspot.com",
+        messagingSenderId: "405629308956",
+        appId: "1:405629308956:web:0b272898ea071b59c34fd9",
+        measurementId: "G-QJX462K990"
+    };
+    firebase.initializeApp(firebaseConfig);
+</script>
+
+
+
+
+
+
+
+
+
 
 </body>
 </html>
